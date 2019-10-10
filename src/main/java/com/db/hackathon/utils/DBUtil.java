@@ -45,6 +45,7 @@ public class DBUtil {
             json.put(obj);
         }
         //return json;
+        System.out.println("Out put json is : " + json.toString());
         return json.toString();
     }
 
