@@ -34,4 +34,30 @@ public class EESPController {
         }
         return json;
     }
+
+    @CrossOrigin(origins="*", allowedHeaders="*")
+    @RequestMapping("/getEarningData")
+    public String getEarningData() {
+        DBUtil utils = new DBUtil();
+        String json = null;
+        try {
+            json = utils.executeQuery(utils.prepareSelectQuery("earning",null));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return json;
+    }
+
+    @CrossOrigin(origins="*", allowedHeaders="*")
+    @RequestMapping("/getExpenseData")
+    public String getExpenseData() {
+        DBUtil utils = new DBUtil();
+        String json = null;
+        try {
+            json = utils.executeQuery(utils.prepareSelectQuery("expense",null));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return json;
+    }
 }

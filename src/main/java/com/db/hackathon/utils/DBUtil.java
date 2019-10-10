@@ -49,7 +49,19 @@ public class DBUtil {
     }
 
     public String prepareSelectQuery(String mode, String type){
-        String query = "select * from EESP_BASE1 where mode='"+mode+"'";
+        String query;
+        switch(mode)
+        {
+            case "expense":
+                query = "select * from EESP_EXPENSE";
+                break;
+            case "earning":
+                query = "select * from EESP_EARNING";
+                break;
+            default:
+                query = "select * from EESP_BASE1 where mode='"+mode+"'";
+        }
+
         //String query = "select * from INFORMATION_SCHEMA.TABLES";
         return query;
     }
