@@ -28,7 +28,7 @@ public class EESPController {
         DBUtil utils = new DBUtil();
         String json = null;
         try {
-            json = utils.executeQuery(utils.prepareSelectQuery("income","fuel"));
+            json = utils.executeQuery(utils.prepareSelectQuery("income",null));
         } catch (SQLException e) {
             e.printStackTrace();
         }

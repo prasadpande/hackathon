@@ -49,7 +49,7 @@ public class DBUtil {
     }
 
     public String prepareSelectQuery(String mode, String type){
-        String query = "select * from EESP_BASE1 where mode='"+mode+"' and type='"+type+"'";
+        String query = "select * from EESP_BASE1 where mode='"+mode+"'";
         //String query = "select * from INFORMATION_SCHEMA.TABLES";
         return query;
     }
